@@ -1,6 +1,13 @@
 from sqlalchemy import create_engine, text
+from dotenv import load_dotenv
+import os
 
-db_connection_string = "mysql+pymysql://root:haniy9186@localhost:5050/jovian_careers?charset=utf8mb4"
+load_dotenv()
+
+db_username = os.getenv("DB_USERNAME")
+db_password = os.getenv("DB_PASSWORD")
+
+db_connection_string = "mysql+pymysql://{db_username}:{db_password}@localhost:5050/jovian_careers?charset=utf8mb4"
 
 engine = create_engine(db_connection_string)
 
