@@ -4,10 +4,7 @@ import os
 
 load_dotenv()
 
-db_username = os.getenv("DB_USERNAME")
-db_password = os.getenv("DB_PASSWORD")
-
-db_connection_string = "mysql+pymysql://{db_username}:{db_password}@localhost:5050/jovian_careers?charset=utf8mb4"
+db_connection_string = os.getenv("DB_CONNECTION_STRING")
 
 engine = create_engine(db_connection_string)
 
